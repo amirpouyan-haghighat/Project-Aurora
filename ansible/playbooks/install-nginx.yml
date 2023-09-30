@@ -1,0 +1,6 @@
+---
+- name: Playbook for nginx-setup
+  hosts: localhost
+  become: true
+  roles:
+    - nginx-setup

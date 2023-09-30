@@ -1,0 +1,17 @@
+---
+- name: Install nginx
+  apt:
+    name: nginx
+    update_cache: yes
+    state: latest
+  notify: Start nginx
+
+- name: Execute the command
+  command: hostname
+  register: command_output
+
+- name: Place command output into index.html
+  copy:
+    content: "{{ command_output.stdout }}"
+    dest: /var/www/html/index.html
+  notify: Restart nginx
