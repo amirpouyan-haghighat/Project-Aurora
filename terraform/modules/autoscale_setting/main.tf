@@ -1,4 +1,4 @@
-resource "azurerm_monitor_autoscale_setting" "sre_demo_as" {
+resource "azurerm_monitor_autoscale_setting" "Project-Aurora_as" {
   name                = var.autoscale_name
   resource_group_name = var.resource_group_name
   location            = var.location

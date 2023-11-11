@@ -8,9 +8,10 @@ sudo apt-get install ansible -y
 sudo apt-get install unzip -y
 
 # Fetch the Ansible playbook and roles from your storage or repo
-wget https://github.com/amirpooyan-haghighat/DemoSRE/archive/refs/heads/main.zip -O /tmp/ansible.zip
-unzip /tmp/ansible.zip -d /tmp
+wget https://github.com/amirpouyan-haghighat/Project-Aurora/archive/refs/heads/${BRANCH_NAME}.zip -O /tmp/project.zip
+unzip /tmp/project.zip -d /tmp
+sudo find /tmp -maxdepth 1 -type d -name 'Project-Aurora*' -exec mv {} /tmp/Project-Aurora \;
 
 # Run the playbook
-cd /tmp/DemoSRE-main/ansible
+cd /tmp/Project-Aurora/ansible
 ansible-playbook ./playbooks/install-nginx.yml

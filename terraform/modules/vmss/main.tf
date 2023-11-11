@@ -1,4 +1,4 @@
-resource "azurerm_virtual_machine_scale_set" "sre_demo_vmss" {
+resource "azurerm_virtual_machine_scale_set" "Project-Aurora_vmss" {
   name                = var.vmss_name
   location            = var.location
   resource_group_name = var.resource_group_name

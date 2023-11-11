@@ -1,4 +1,4 @@
-resource "azurerm_storage_account" "sre_demo_sa" {
+resource "azurerm_storage_account" "Project-Aurora_sa" {
   name                     = var.sa_name
   resource_group_name      = var.resource_group_name
   location                 = var.location

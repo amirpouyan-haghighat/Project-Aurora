@@ -1,4 +1,4 @@
-resource "azurerm_virtual_machine_scale_set_extension" "sre_demo_vmss_ansible" {
+resource "azurerm_virtual_machine_scale_set_extension" "Project-Aurora_vmss_ansible" {
   name                         = var.extension_name
   virtual_machine_scale_set_id = var.vmss_id
   publisher                    = var.extension_publisher
@@ -7,6 +7,6 @@ resource "azurerm_virtual_machine_scale_set_extension" "sre_demo_vmss_ansible" {
 
   settings = jsonencode({
     "fileUris" : [var.script_url],
-    "commandToExecute" : var.command_to_execute
+    "commandToExecute" : "export BRANCH_NAME='${var.branch_name}' && ${var.command_to_execute}"
   })
 }
