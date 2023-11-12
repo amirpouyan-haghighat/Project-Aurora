@@ -1,3 +1,8 @@
 {
-  "ansible.python.interpreterPath": "/opt/homebrew/bin/python3"
+  "ansible.python.interpreterPath": "/opt/homebrew/bin/python3",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#301283",
+    "titleBar.activeBackground": "#431AB7",
+    "titleBar.activeForeground": "#FDFCFF"
+  }
 }

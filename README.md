@@ -16,7 +16,7 @@ This project focuses on creating a scalable and resilient cloud infrastructure i
 
 To get started with the Aurora Project, follow these steps:
 
-1. **Prerequisites**: Install Terraform and set up an Azure account. Ansible will be installed on the VMSS instances.
+1. **Prerequisites**: Install Terrafom (only if you want to customize project) and set up an Azure account.
 
 2. **Configuration**:
 

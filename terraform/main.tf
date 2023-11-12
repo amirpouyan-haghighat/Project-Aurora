@@ -2,7 +2,6 @@ provider "azurerm" {
   features {}
 }
 provider "random" {
-  # You can pin a specific version of the Random provider here
   version = "~> 3.0"
 }
 
@@ -30,6 +29,9 @@ module "vnet_and_subnet" {
   location                = module.resource_group.location
 }
 
+# using standard sku
+# attaching network profile to load balancer and attach it to same subnet
+# enabling boot diangnostics and set it to storage account
 module "vmss" {
   source              = "./modules/vmss"
   vmss_name           = "Project-Aurora-vmss"
@@ -107,6 +109,9 @@ module "nsg" {
   subnet_id           = module.vnet_and_subnet.subnet_id
 }
 
+# dynamically use the current github repository
+# download the whole project zip file frome the respective branch dynamiclly
+# inject the branch name from root variable.tf inside module itself
 module "vmss_extension" {
   source             = "./modules/vmss_extension"
   extension_name     = "ansibleSetup"
