@@ -86,17 +86,16 @@ module "autoscale_setting" {
 }
 
 module "lb_and_pip" {
-  source                = "./modules/lb_and_pip"
-  pip_name              = "Project-Aurora-lb-pip"
-  lb_name               = "Project-Aurora-lb"
-  frontend_config_name  = "Project-Aurora-lb-frontend-config"
-  backend_pool_name     = "Project-Aurora-lb-backend-pool"
-  probe_name            = "Project-Aurora-lb-health-probe"
-  rule_name             = "Project-Aurora-lb-rule"
-  resource_group_name   = module.resource_group.rg_name
-  location              = module.resource_group.location
-  diagnostic_storage_id = module.storage_account.storage_account_id
-  dependencies          = [module.storage_account]
+  source               = "./modules/lb_and_pip"
+  pip_name             = "Project-Aurora-lb-pip"
+  lb_name              = "Project-Aurora-lb"
+  frontend_config_name = "Project-Aurora-lb-frontend-config"
+  backend_pool_name    = "Project-Aurora-lb-backend-pool"
+  probe_name           = "Project-Aurora-lb-health-probe"
+  rule_name            = "Project-Aurora-lb-rule"
+  resource_group_name  = module.resource_group.rg_name
+  location             = module.resource_group.location
+  dependencies         = [module.storage_account]
 }
 
 module "nsg" {
